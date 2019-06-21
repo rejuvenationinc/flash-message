@@ -9,6 +9,7 @@
 
 import Bus from './bus'
 export default {
+  name: 'flash-message',
   props: ['message'],
   data() {
     return {
