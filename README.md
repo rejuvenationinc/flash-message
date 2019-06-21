@@ -1,12 +1,14 @@
 # Vue Flash Message ✨
 
-Simple component that unmounts a component after a given delay. It adds no styling or animations.
+Simple component that un-mounts a component after a given delay.  
 ## Basic Example
 
 ```javascript
 import Vue from 'vue';
 import FlashMessage from 'flash-message'
-Vue.use(FlashMessage)
+Vue.use(FlashMessage, {
+  duration: 500
+})
 ```
 
 ## Usage
@@ -17,18 +19,18 @@ Output flash message pool and configure transitions.
 
 Emit flash messages from any component with a flash (or custom named) method.
 ```javascript
-this.flash('Data loaded', 'success');
-this.flash('Validation failed', 'error');
-this.flash('Spawning too much alerts is a bad UX', 'warning');
-this.flash('Live long and prosper', 'info');
+this.flashMessage('Success Message', 'success');
+this.flashMessage('Error Message', 'error');
+this.flashMessage('Warning Message', 'warning');
+this.flashMessage('Info Message', 'info');
 ```
 
 ## Shortcut methods
 You can also use shortcut methods to output common message types
 ```javascript
-this.flashSuccess('Data loaded');
-this.flashError('Validation failed');
-this.flashWarning('Spawning too much alerts is a bad UX');
-this.flashInfo('Live long and prosper');
+this.flashSuccess('Success Message');
+this.flashError('Error Message');
+this.flashWarning('Warning Message');
+this.flashInfo('Info Message');
 
 ```

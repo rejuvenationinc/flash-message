@@ -33,7 +33,7 @@ export default {
       this.type = this.alertClass(type);
       setTimeout(() => {
         this.hide();
-      },5000)
+      }, this.$properties.duration)
     },
 
     alertClass(type) {

@@ -3,7 +3,7 @@ import Vue from 'vue'
 
 export default {
     methods: {
-      flash(message, type){
+      flashMessage(message, type){
         Bus.$emit('flash', message, type);
       },
       flashSuccess(message, type){
