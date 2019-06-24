@@ -8,6 +8,10 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rejuvenationinc/flash-message.git"
+  },
   "dependencies": {
     "vue": "^2.6.10"
   },

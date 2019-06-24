@@ -1,8 +1,10 @@
 <template>
-  <div class="alert" v-bind:class="[type]"role="alert" v-show="show">
-    <button type="button" class="close" v-on:click="alert">&times;</button>
-      {{ body }}
-  </div>
+  <transition v-bind:name="this.$properties.transition" v-show="this.$properties.transition">
+    <div class="alert" v-bind:class="[type]" role="alert" v-show="show">
+      <button type="button" class="close" v-if="this.$properties.close" v-on:click="alert">&times;</button>
+        {{ body }}
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -15,7 +17,9 @@ export default {
     return {
       show : false,
       body : '',
-      type: ''
+      type: '',
+      transition: '',
+      close: ''
     }
   },
 
@@ -29,6 +33,7 @@ export default {
 
   methods: {
     flash(message, type) {
+
       this.show = true;
       this.body = message;
       this.type = this.alertClass(type);
@@ -91,4 +96,42 @@ export default {
     background-color: #d9edf7;
     border-color: #bce8f1;
   }
+
+  .slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+
+  .bounce-enter-active {
+    animation: bounce-in .5s;
+  }
+  .bounce-leave-active {
+    animation: bounce-in .5s reverse;
+  }
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
 </style>
