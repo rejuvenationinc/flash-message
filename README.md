@@ -11,6 +11,17 @@ Vue.use(FlashMessage, {
 })
 ```
 
+### Options
+
+below are the options you can pass to create a Flash Message
+
+**Option**|**Type's**|**Default**|**Description**
+-----|-----|-----|-----
+duration|Number|500|You can pass the duration in millisecond
+close|Boolean|true| By clicking on close button it will close the flash message
+transition|String|null| You can pass different kind of transition. Here is the list ** fade, slide-fade, bounce **
+
+
 ## Usage
 Output flash message pool and configure transitions.
 ```html

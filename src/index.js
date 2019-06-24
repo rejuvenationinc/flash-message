@@ -12,7 +12,7 @@ export default {
     let flashOptions = Object.assign({}, {
       duration: 500,
       close: true,
-      transition: 'fade'
+      transition: ''
     }, options);
 
     Vue.prototype.$properties = flashOptions;
