@@ -1,11 +1,16 @@
-import FlashMessage from './flash_message.vue';
+import FlashMessageComponent from './flash_message.vue';
 import Bus from './bus'
 import FlashMixing from './flash_mixing'
+import Publisher from './publisher'
 
+// const FlashMessage = {
+  const install = (Vue, options) => {
+    debugger;
+    console.log("loading!!!!")
+    const Publish = new Publisher();
 
-export default {
+    Vue.FlashMessage = Vue.prototype.$flashMessage = Publish;
 
-  install(Vue, options){
     Bus.init(Vue);
     Vue.mixin(FlashMixing);
 
@@ -15,11 +20,10 @@ export default {
       transition: ''
     }, options);
 
+
     Vue.prototype.$properties = flashOptions;
-
-    const Component = Vue.extend(FlashMessage);
+    const Component = Vue.extend(FlashMessageComponent);
     new Component().$mount('#flash-message');
-
 
     // const FlashComponent = Vue.component('flash-message', FlashMessage, {
     //   props: ['title'],
@@ -29,4 +33,10 @@ export default {
     //   el: 'flash-message'
     // })
   }
+// }
+
+if (typeof window !== 'undefined' && window.Vue) {
+    window.FlashMessage = install;
 }
+
+module.exports = { install }

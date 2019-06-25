@@ -1,7 +1,7 @@
 <template>
   <transition v-bind:name="this.$properties.transition" v-show="this.$properties.transition">
     <div class="alert" v-bind:class="[type]" role="alert" v-show="show">
-      <button type="button" class="close" v-if="this.$properties.close" v-on:click="alert">&times;</button>
+      <button type="button" class="close" v-if="this.$properties.close" v-on:click="alert" >&times;</button>
         {{ body }}
     </div>
   </transition>
@@ -95,6 +95,10 @@ export default {
     color: #31708f;
     background-color: #d9edf7;
     border-color: #bce8f1;
+  }
+
+  .close{
+    float: right;
   }
 
   .slide-fade-enter-active {

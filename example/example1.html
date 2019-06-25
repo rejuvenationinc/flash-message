@@ -1,0 +1,19 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="/Users/smondal/sandip/work/vue/flash-message/dist/index.js"></script>
+<flash-message id="flash-message"></flash-message>
+<div id="app">
+  {{ message }}
+</div>
+<button onclick="myFunction()">Click Me to Display Flash Message</button>
+<script>
+  Vue.use(FlashMessage)
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!'
+    }
+  })
+  function myFunction() {
+    Vue.FlashMessage.success("Welcome");
+  }
+</script>
