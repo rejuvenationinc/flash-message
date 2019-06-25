@@ -9,13 +9,13 @@ class Bus{
 
   $emit(event, message, type){
     if(this.vue){
-      this.vue.$emit(event, message, type)
+      this.vue.$emit(event, message, type);
     }
   }
 
   $on(event, callback){
     if(this.vue){
-        this.vue.$on(event, callback)
+        this.vue.$on(event, callback);
     }
   }
 }

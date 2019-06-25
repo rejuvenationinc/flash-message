@@ -1,6 +1,4 @@
 import Bus from './bus'
-import Vue from 'vue'
-
 export default {
     methods: {
       flashMessage(message, type){

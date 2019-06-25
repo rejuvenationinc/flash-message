@@ -3,9 +3,8 @@ import Bus from './bus'
 import FlashMixing from './flash_mixing'
 import Publisher from './publisher'
 
-// const FlashMessage = {
-  const install = (Vue, options) => {
-    debugger;
+export const FlashMessage = {
+  install(Vue, options){
     console.log("loading!!!!")
     const Publish = new Publisher();
 
@@ -33,10 +32,10 @@ import Publisher from './publisher'
     //   el: 'flash-message'
     // })
   }
-// }
-
-if (typeof window !== 'undefined' && window.Vue) {
-    window.FlashMessage = install;
 }
 
-module.exports = { install }
+if (typeof window !== 'undefined' && window.Vue) {
+    window.FlashMessage = FlashMessage;
+}
+
+export default { FlashMessage }

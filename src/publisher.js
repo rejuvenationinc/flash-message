@@ -1,5 +1,5 @@
 
-import Bus from './bus'
+import Bus from './bus';
 const Publisher  = function()
 {
   this.message = (message, type) => {

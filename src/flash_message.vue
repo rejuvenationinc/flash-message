@@ -25,10 +25,10 @@ export default {
 
   created() {
     Bus.$on('flash', (message, type) => this.flash(message, type));
-    Bus.$on('flashSuccess', (message, type) => this.flash(message, 'success'));
-    Bus.$on('flashError', (message, type) => this.flash(message, 'error'));
-    Bus.$on('flashAlert', (message, type) => this.flash(message, 'alert'));
-    Bus.$on('flashNotice', (message, type) => this.flash(message, 'notice'));
+    Bus.$on('flashSuccess', (message) => this.flash(message, 'success'));
+    Bus.$on('flashError', (message) => this.flash(message, 'error'));
+    Bus.$on('flashAlert', (message) => this.flash(message, 'alert'));
+    Bus.$on('flashNotice', (message) => this.flash(message, 'notice'));
   },
 
   methods: {
