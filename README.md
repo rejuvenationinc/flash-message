@@ -1,31 +1,47 @@
 # Vue Flash Message ✨
 
 Simple component that un-mounts a component after a given delay.  
-## Basic Example
+## Installation
 
-```javascript
-import Vue from 'vue';
-import FlashMessage from 'flash-message'
-Vue.use(FlashMessage, {
-  duration: 500
-})
+#### Install using npm
+```bash
+# install it via npm
+npm install --save ssh://git@github.com:rejuvenationinc/flash-message.git
 ```
+* This package is not on NPM, use GitHub source only.
 
-### Options
+#### Direct usage with html
+```html
+<!-- Insert the vue core before vue-toasted -->
+<script src="https://github.com/rejuvenationinc/flash-message/blob/master/dist/index.js"></script>
 
-below are the options you can pass to create a Flash Message
+<flash-message id="flash-message"></flash-message>
+<script>
+    Vue.use(FlashMessage)
+</script>
+```
+Checkout <a target="_blank" href="https://github.com/rejuvenationinc/flash-message/tree/master/example"> the example
 
-**Option**|**Type's**|**Default**|**Description**
------|-----|-----|-----
-duration|Number|500|You can pass the duration in millisecond
-close|Boolean|true| By clicking on close button it will close the flash message
-transition|String|null| You can pass different kind of transition. Here is the list ** fade, slide-fade, bounce **
-
+<hr>
 
 ## Usage
+
 Output flash message pool and configure transitions.
 ```html
 <flash-message id="flash-message"></flash-message>
+```
+
+It is simple. couple of lines all what you need.
+
+```javascript
+// register the plugin on vue
+import FlashMessage from 'flash-message';
+
+Vue.use(FlashMessage)
+
+// you can also pass options, check options reference below
+Vue.use(FlashMessage, Options)
+
 ```
 
 Emit flash messages from any component with a flash (or custom named) method.
@@ -45,3 +61,26 @@ this.flashWarning('Warning Message');
 this.flashInfo('Info Message');
 
 ```
+
+```javascript
+// and also
+Vue.FlashMessage.success('Success Message');
+Vue.FlashMessage.error('Error Message');
+Vue.FlashMessage.warning('Warning Message');
+Vue.FlashMessage.info('Info Message');
+```
+
+Also you can use directly on window object
+```
+window.FlashMessage.success('Success Message');
+```
+
+### Options
+
+below are the options you can pass to create a Flash Message
+
+**Option**|**Type's**|**Default**|**Description**
+-----|-----|-----|-----
+duration|Number|500|You can pass the duration in millisecond
+close|Boolean|true| By clicking on close button it will close the flash message
+transition|String|null| You can pass different kind of transition. Here is the list ** fade, slide-fade, bounce **
