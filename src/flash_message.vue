@@ -37,9 +37,9 @@ export default {
       this.show = true;
       this.body = message;
       this.type = this.alertClass(type);
-      setTimeout(() => {
-        this.hide();
-      }, this.$properties.duration)
+      if(this.$properties.duration){
+       this.duration();
+      }
     },
 
     alertClass(type) {
@@ -52,6 +52,12 @@ export default {
      return classes[type]
     },
 
+    duration(){
+      setTimeout(() => {
+        this.hide();
+      }, this.$properties.duration)
+    },
+    
     alert(){
       this.hide();
     },
