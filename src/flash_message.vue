@@ -33,7 +33,6 @@ export default {
 
   methods: {
     flash(message, type) {
-
       this.show = true;
       this.body = message;
       this.type = this.alertClass(type);
@@ -57,7 +56,7 @@ export default {
         this.hide();
       }, this.$properties.duration)
     },
-    
+
     alert(){
       this.hide();
     },
@@ -69,7 +68,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .alert{
     padding: 8px 35px 8px 14px;
     margin-bottom: 20px;

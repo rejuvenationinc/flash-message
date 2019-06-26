@@ -1,14 +1,12 @@
 var path = require('path')
 var webpack = require('webpack')
+const merge = require('webpack-merge');
 
-module.exports = {
+var config = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'index.js',
     library:'flash-message',
-    libraryTarget: 'umd'
   },
   module: {
     rules: [
@@ -63,3 +61,21 @@ module.exports = {
     })
   ]
 }
+
+module.exports = [
+  merge(config, {
+    output: {
+      filename: 'flash-message.min.js',
+      libraryTarget: 'window',
+      library: 'flash-message',
+    }
+  }),
+  merge(config, {
+    output: {
+      filename: 'flash-message.js',
+      libraryTarget: 'umd',
+      library: 'flash-message',
+      umdNamedDefine: true
+    }
+  })
+];
