@@ -11,9 +11,11 @@ npm install --save ssh://git@github.com:rejuvenationinc/flash-message.git
 * This package is not on NPM, use GitHub source only.
 
 #### Direct usage with html
+There are two version of javascript are available for browser(flash-message.min.js) use and Node(flash-message.js) use.
+
 ```html
 <!-- Insert the vue core before vue-toasted -->
-<script src="https://github.com/rejuvenationinc/flash-message/blob/master/dist/index.js"></script>
+<script src="https://github.com/rejuvenationinc/flash-message/blob/master/dist/flash-message.min.js"></script>
 
 <flash-message id="flash-message"></flash-message>
 <script>
@@ -26,7 +28,7 @@ Checkout <a target="_blank" href="https://github.com/rejuvenationinc/flash-messa
 
 ## Usage
 
-Output flash message pool and configure transitions.
+Output flash message and configure transitions.
 ```html
 <flash-message id="flash-message"></flash-message>
 ```
@@ -71,7 +73,7 @@ Vue.FlashMessage.info('Info Message');
 ```
 
 Also you can use directly on window object
-```
+```html
 window.FlashMessage.success('Success Message');
 ```
 
@@ -81,6 +83,6 @@ below are the options you can pass to create a Flash Message
 
 **Option**|**Type's**|**Default**|**Description**
 -----|-----|-----|-----
-duration|Number|500|You can pass the duration in millisecond
+duration|Number|null|You can pass the duration in millisecond, Message will display this duration
 close|Boolean|true| By clicking on close button it will close the flash message
-transition|String|null| You can pass different kind of transition. Here is the list ** fade, slide-fade, bounce **
+transition|String|null| You can pass different kind of transition. Here is the list **fade, slide-fade, bounce**
