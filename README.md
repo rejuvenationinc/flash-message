@@ -15,7 +15,7 @@ There are two version of javascript are available for browser(flash-message.min.
 
 ```html
 <!-- Insert the vue core before vue-toasted -->
-<script src="https://github.com/rejuvenationinc/flash-message/blob/master/dist/flash-message.min.js"></script>
+<script src="https://github.com/rejuvenationinc/flash-message/blob/master/dist/flash-message.js"></script>
 
 <flash-message id="flash-message"></flash-message>
 <script>
