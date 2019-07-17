@@ -5,11 +5,9 @@ import Publisher from './publisher'
 
 const FlashMessage = {
   install(Vue, options){
-
     console.log("loading!!!!")
     const Publish = new Publisher();
-
-    Vue.FlashMessage = Vue.prototype.$flashMessage = Publish;
+    Vue.FlashMessage = Publish;
 
     Bus.init(Vue);
     Vue.mixin(FlashMixing);

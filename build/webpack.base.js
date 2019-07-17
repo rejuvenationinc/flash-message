@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -14,20 +15,18 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            'scss': 'vue-style-loader!css-loader!sass-loader',
-            'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
-          }
-        }
+        loader: 'vue-loader'
+      },
+      {
+       test: /\.css$/i,
+       use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          presets: ['es2015']
+          presets: ['@babel/preset-env']
         }
       },
       {
@@ -48,6 +47,7 @@ module.exports = {
     }
   },
   plugins: [
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new VueLoaderPlugin()
   ]
 }

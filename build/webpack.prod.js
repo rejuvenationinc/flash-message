@@ -1,9 +1,8 @@
 const merge = require('webpack-merge');
 const base = require('./webpack.base.js');
 const TerserJSPlugin = require('terser-webpack-plugin');
-
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-
+const CompressionPlugin = require('compression-webpack-plugin')
 
  module.exports = merge(base, {
    mode: 'production',
@@ -19,6 +18,16 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
            // ES5 compliant code for older browsers
            ecma: 8
          },
-     }), new OptimizeCSSAssetsPlugin({}) ],
-   }
+       }
+     }) ],
+   },
+   plugins: [
+      new OptimizeCSSAssetsPlugin({}),
+      new CompressionPlugin({
+        filename: '[path].gz[query]',
+        algorithm: 'gzip',
+        cache: true,
+        test: /\.(js|css|html|json|ico|svg|eot|otf|ttf|map)$/
+      })
+    ]
  });
