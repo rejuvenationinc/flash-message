@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@babel/plugin-transform-object-assign": "^7.2.0",
+    "babel-polyfill": "^6.26.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {

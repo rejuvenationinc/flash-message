@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 import FlashMessageComponent from './flash_message.vue';
 import Bus from './bus'
 import FlashMixing from './flash_mixing'
@@ -12,10 +13,10 @@ const FlashMessage = {
     Bus.init(Vue);
     Vue.mixin(FlashMixing);
 
-    let flashOptions = Object.assign({}, {
-      close: true,
-      transition: ''
-    }, options);
+    // let flashOptions = Object.assign({}, {
+    //   close: true,
+    //   transition: ''
+    // }, options);
 
 
     Vue.prototype.$properties = flashOptions;
