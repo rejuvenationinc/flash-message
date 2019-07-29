@@ -1,6 +1,6 @@
 {
   "name": "flash-message",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/flash-message.js",
   "scripts": {
@@ -15,8 +15,6 @@
     "url": "git+https://github.com/rejuvenationinc/flash-message.git"
   },
   "dependencies": {
-    "@babel/plugin-transform-object-assign": "^7.2.0",
-    "babel-polyfill": "^6.26.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
