@@ -1,6 +1,6 @@
 {
   "name": "flash-message",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/flash-message.js",
   "scripts": {
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.4",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-typescript": "^7.3.3",
     "babel-eslint": "^10.0.2",
