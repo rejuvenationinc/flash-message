@@ -15,6 +15,7 @@
     "url": "git+https://github.com/rejuvenationinc/flash-message.git"
   },
   "dependencies": {
+    "@babel/plugin-transform-object-assign": "^7.2.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
